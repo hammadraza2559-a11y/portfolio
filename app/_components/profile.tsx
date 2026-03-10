@@ -1,0 +1,94 @@
+import React from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Calendar, Download, MapPin } from 'lucide-react'
+import { skills } from '@/data'
+import Link from 'next/link'
+import Hero from './Hero'
+import { TABS } from '../(root)/page'
+
+interface ProfileProps {
+    setActiveTab: (tab: typeof TABS[number]) => void
+}
+
+export default function Profile({ setActiveTab }: ProfileProps) {
+    return (
+        <>
+            <Hero setActiveTab={setActiveTab} />
+
+            <div className="space-y-8">
+                {/* Bio Section */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">Bio</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <p className="text-muted-foreground leading-relaxed">
+                           Highly skilled Frontend-Focused Web Developer with strong expertise in designing, developing, and
+deploying responsive, user-friendly web applications. Proficient in modern front-end technologies
+including HTML5, CSS3, JavaScript (ES6+), React.js, Bootstrap, and Tailwind CSS, with a strong eye
+for UI/UX design and performance optimization. 
+Strong hands-on experience with Laravel frontend development, including Blade templating, MVC
+architecture, routing, authentication systems, form handling, and RESTful API integration. Capable
+of converting UI/UX designs into fully functional Laravel-based applications while maintaining
+clean, scalable, and maintainable code.
+Additionally familiar with back-end technologies including Laravel, Node.js, Express.js, PHP, and
+MongoDB/MySQL, enabling effective collaboration across full-stack environments and smooth
+frontend backend integration. 
+Strong understanding of RESTful APIs, MVC architecture, Git/GitHub version control, and database
+fundamentals. Adept at problem-solving, debugging, and optimizing frontend performance.
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed">
+                            When I'm not coding, you can find me contributing to open-source projects, writing technical articles,
+                            or exploring the latest web technologies. I'm always eager to learn and share knowledge with the
+                            developer community.
+                        </p>
+                        <div className="flex gap-3 sm:gap-0 sm:items-center flex-col sm:flex-row  sm:space-x-4 text-sm text-muted-foreground">
+                            
+                            <div className="flex items-center">
+                                <Calendar className="w-4 h-4 mr-1" />
+                                Available for hire
+                            </div>
+                        </div>
+
+                        <div>
+                            <Link href="/Hammad Raza..pdf" target='_blank' className="inline-flex items-center text-sm text-primary hover:underline"
+                                aria-label="Download Resume" download="Alex_Developer_Resume.pdf" rel="noopener noreferrer">
+                                <Download className="w-4 h-4 mr-2" />
+                                Download Resume
+                            </Link>
+                        </div>
+                    </CardContent>
+                </Card>
+
+                {/* Skills Section */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-xl">Skills & Technologies</CardTitle>
+                        <CardDescription>Technologies I work with regularly</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {skills.map((skill) => (
+                                <div key={skill.name} className="space-y-2">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center space-x-2">
+                                            <skill.icon className="w-4 h-4 text-primary" />
+                                            <span className="font-medium">{skill.name}</span>
+                                        </div>
+                                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                                    </div>
+                                    <div className="w-full bg-muted rounded-full h-2">
+                                        <div
+                                            className="bg-primary h-2 rounded-full transition-all duration-500"
+                                            style={{ width: `${skill.level}%` }}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+        </>
+    )
+}
