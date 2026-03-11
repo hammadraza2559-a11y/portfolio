@@ -10,16 +10,16 @@ const inter = Montserrat({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Alex Developer - Portfolio",
-    template: "%s | Alex Developer",
+    default: "Hammad Raza - Portfolio",
+    template: "%s | Hammad Raza",
   },
-  description: "Full Stack Developer & UI/UX Designer Portfolio of Alex — building scalable, elegant web apps with React, Node.js, and design precision.",
+  description: "Full Stack Developer & UI/UX Designer Portfolio of Hammad Raza — building scalable, elegant web apps with React, Node.js, and design precision.",
   keywords: [
     "Full Stack Developer",
     "React Developer",
     "Node.js",
     "Portfolio",
-    "Alex Developer",
+    "Hammad Raza",
     "Web Developer",
     "UI/UX Designer",
   ],
@@ -29,25 +29,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://minimal-portfolio-ps.vercel.app",
-    title: "Alex Developer - Portfolio",
+    title: "Hammad Raza - Portfolio",
     description:
-      "Explore the portfolio of Alex, a full stack developer focused on performance, scalability, and clean UI/UX.",
-    siteName: "Alex Developer Portfolio",
+      "Explore the portfolio of Hammad Raza, a full stack developer focused on performance, scalability, and clean UI/UX.",
+    siteName: "Hammad Raza Portfolio",
     images: [
       {
         url: "/og_bannerr.jpeg",
         width: 1200,
         height: 630,
-        alt: "Alex Developer Portfolio",
+        alt: "Hammad Raza Portfolio",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Developer - Portfolio",
+    title: "Hammad Raza - Portfolio",
     description:
-      "Full Stack Developer & UI/UX Designer Portfolio of Alex.",
+      "Full Stack Developer & UI/UX Designer Portfolio of Hammad Raza.",
     creator: "@psparwez",
     images: ["/og_bannerr.jpeg"],
   },
