@@ -59,7 +59,7 @@ export default function Hero({ setActiveTab }: HeroProps) {
                                 height={80}
                                 width={80}
                                 className="absolute h-full w-full top-0 left-0 rounded-lg object-cover saturate-100"
-                                aria-label="Profile photo of Alex Developer"
+                                aria-label="Profile photo of Hammad Raza"
                                 quality={100}
                             />
                         </div>
